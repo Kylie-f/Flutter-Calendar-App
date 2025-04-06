@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <!-- Google Sign-In Client ID -->
+  <meta name="google-signin-client_id" content="648886376878-sdo52a0rrffihqrb5k4ppldd22hh4jb3.apps.googleusercontent.com" />
+
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="flutter_project_calendar">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>flutter_project_calendar</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <!-- Firebase SDK (ADD THESE BEFORE flutter_bootstrap.js) -->
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
+  
+  <script>
+    // Your Firebase config (use values from your firebase_options.dart)
+    const firebaseConfig = {
+      apiKey: "AIzaSyBowjW5r7pwwDtRAs1vmj76zuApaBRasxY",
+      authDomain: "fnof-1.firebaseapp.com",
+      projectId: "fnof-1",
+      storageBucket: "fnof-1.appspot.com",
+      messagingSenderId: "1024529582289",
+      appId: "1:1024529582289:web:20e174ad32b82cebbcddf0"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- Flutter bootstrap (must come after Firebase) -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
