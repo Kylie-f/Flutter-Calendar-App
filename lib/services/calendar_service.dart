@@ -2,7 +2,7 @@ import 'package:googleapis/calendar/v3.dart';
 import 'package:http/http.dart' as http;
 import 'google_auth_service.dart';
 
-// Custom authenticated HTTP client
+// HTTP client
 class _CustomAuthClient extends http.BaseClient {
   final Map<String, String> _headers;
   final http.Client _inner;
@@ -23,17 +23,17 @@ class CalendarService {
       : _authService = authService;
 
   Future<List<Event>> fetchEvents() async {
-    // 1. Get authentication headers
+    // authentication headers
     final authHeaders = await _authService.authHeaders;
 
-    // 2. Create base HTTP client
+    // HTTP client
     final baseClient = http.Client();
 
-    // 3. Create authenticated client using custom wrapper
+    // authenticated client
     final authClient = _CustomAuthClient(authHeaders, baseClient);
 
     try {
-      // 4. Make API call to Google Calendar
+      // call to Google Calendar
       final calendar = CalendarApi(authClient);
       final response = await calendar.events.list(
         'primary',
@@ -45,7 +45,7 @@ class CalendarService {
 
       return response.items ?? [];
     } finally {
-      // 5. Close base client
+      // Close base client
       baseClient.close();
     }
   }
